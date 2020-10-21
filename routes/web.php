@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'UserController@index')->name('dashboard');
+Route::resource('products', 'ProductController');
+Route::resource('orders', 'OrderController');

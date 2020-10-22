@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -78,14 +79,14 @@
             </div>
         </nav>
 
-        <main class="p-4 ">
+        <main class="p-4 mt-5">
             <div class="row">
                 @auth
-                    <div class="col-md-3">
+                    <div class="col-md-3 bg-danger  position-relative" >
 
-                        <div class="card p-0 m-0">
+                        <div class="card p-0 m-0 position-fixed " style="min-width: 25%">
                             <div class="card-header"><i class="fa fa-bars"></i> Menu</div>
-                            <div class="card-body p-0">
+                            <div class="card-body p-0 ">
 
                                 <ul class="list-group list-group-flush">
                                     <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
@@ -96,7 +97,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 offset-md-3">
                 @else
                     <div class="col-md-12">
                 @endauth
@@ -105,6 +106,7 @@
                 </div>
         </main>
     </div>
+    @yield('script')
 </body>
 
 </html>

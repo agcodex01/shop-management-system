@@ -24,8 +24,8 @@
       <td>Talamban</td>
       <td><a href = ""><i class="fa fa-eye " ></i><a/>
       <select name="status" id="">
-          <option value="pending">pending</option>
-          <option value="ordered">Ordered</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
           <option value="complete">Complete</option>
       </select>          
     </tr>

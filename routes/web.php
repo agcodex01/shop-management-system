@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'UserController@index')->name('dashboard');
+Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
+Route::resource('users', 'UserController');
 Route::resource('products', 'ProductController');
 Route::resource('orders', 'OrderController');

@@ -5,22 +5,52 @@
         <div class="card border-0 bg-transparent">
             <div class="card-header bg-transparent d-flex justify-content-between">
                 <b>Dashboard</b>
-                <span>{{ date('d D M Y') }}</span>
+                <span>{{ date('D d, M. Y') }}</span>
             </div>
 
             <div class="card-body">
                 <div class="row">
-                    @for ($num = 0; $num < 3; $num++)
-                        <div class="col-md-4">
-                            <div class="card ">
-                                <div class="card-body bg-primary text-white">
-                                    <h4>Orders</h4>
+
+                    <div class="col-md-4">
+                        <div class="card rounded rounded-circle">
+                            <div class="card-body text-center p-4 bg-danger text-white">
+                                <div class="d-inline-flex">
+                                    <i class="fa fa-3x fa-user"></i>
+                                    <b>( 14 )</b>
                                 </div>
+
+                                <h4 class="mt-3 font-weight-bold">CUSTOMER </h4>
                             </div>
                         </div>
-                    @endfor
-                    <div class="col-md-12">
-                        <canvas id="myChart" width="400" height="400"></canvas>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center p-4 bg-success text-white">
+                                <div class="d-inline-flex">
+                                    <i class="fa fa-3x fa-list-alt mr-2"></i>
+                                   <b> ( 57 ) </b>
+                                </div>
+
+                                <h4 class="mt-3 font-weight-bold">ORDERS</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center p-4 bg-primary text-white">
+                                <div class="d-inline-flex">
+                                    <i class="fa fa-3x fa-truck mr-2"></i>
+                                   <b> ( 57 ) </b>
+                                </div>
+
+                                <h4 class="mt-3 font-weight-bold">DELIVERY</h4>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12 mt-5">
+                        <canvas id="myChart" width="400" height="200"></canvas>
                     </div>
 
                 </div>
@@ -37,7 +67,7 @@
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Product', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                 label: '# of Votes',
                 data: [12, 19, 3, 5, 2, 3],
@@ -63,6 +93,11 @@
         options: {
             scales: {
                 yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
                     ticks: {
                         beginAtZero: true
                     }

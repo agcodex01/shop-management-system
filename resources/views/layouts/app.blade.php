@@ -89,9 +89,10 @@
                             <div class="card-body p-0 ">
 
                                 <ul class="list-group list-group-flush">
-                                    <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
-                                    <a href="{{ route('products.index') }}" class="list-group-item list-group-item-action">Products</a>
-                                    <a href="{{ route('orders.index') }}" class="list-group-item list-group-item-action">Orders</a>
+                                    <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action"><i class="fa fa-desktop"></i> Dashboard</a>
+                                    <a href="{{ route('products.index') }}" class="list-group-item list-group-item-action"><i class="fa fa-shopping-bag"></i> Products</a>
+                                    <a href="{{ route('orders.index') }}" class="list-group-item list-group-item-action"><i class="fa fa-list-alt"></i> Orders</a>
+                                    <a href="{{ route('users.index') }}" class="list-group-item list-group-item-action"><i class="fa  fa-user"></i> Customers</a>
                                 </ul>
                             </div>
                         </div>

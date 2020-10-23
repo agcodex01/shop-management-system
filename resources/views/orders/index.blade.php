@@ -23,10 +23,11 @@
       <td>Oct. 21, 2020</td>
       <td>Talamban</td>
       <td><a href = ""><i class="fa fa-eye " ></i><a/>
-          <a href = ""><i class="fa fa-edit" ></i></a>
-      </td>
-      <td></td>
-      
+      <select name="status" id="">
+          <option value="pending">pending</option>
+          <option value="ordered">Ordered</option>
+          <option value="complete">Complete</option>
+      </select>          
     </tr>
   </tbody>
 </table>

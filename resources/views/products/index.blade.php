@@ -2,11 +2,16 @@
 
 @section('content')
     <div class="container">
+    <div class="card ">
+    <div class="card-header bg-transparent d-flex justify-content-between align-items-end">
         <h1>Products</h1>
         <a href="{{route('products.edit',1)}}">Product Edit</a>
         <a href="{{route('products.show',1)}}">Product Show</a>
-        <a href="{{route('products.create')}}">Product Create</a>
-        <div>
+          
+              <a href="{{ route('products.create')}}" class="btn btn-primary btn-sm" >Add New Product<i class="fa fa-plus ml-2"></i></a>
+
+          </div>
+          <div class="card-body">
         <table class="table">
   <thead>
     <tr>
@@ -63,6 +68,7 @@
     </tr>
   </tbody>
 </table>
-        </div>
+</div>
+</div>
     </div>
 @endsection

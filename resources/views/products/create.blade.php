@@ -1,60 +1,127 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
-    .form-group{
-        width: 80%;
-        margin: 0 auto;
-       
-    }
-    .form-control{
-        width: 100%;
-        padding-left: 2%;
-    }
-    .submit-btn{
-        padding-top: 20px;
-        width: 10%;
-        margin: 0 auto;
-    }
-    
-</style>
     <div class="container">
-        <h1>Product Create</h1>
-    </div>
-    
-    <form>
-    <div class="form-group">
-        <label for="productName">Product Name</label>
-        <input type="text" class="form-control" id="productName" placeholder="Product Name...">
-    </div>
-    <div class="form-group">
-        <label for="productColor">Color/s</label>
-        <input type="text" class="form-control" id="productColor" placeholder="Product Color/s...">
-    </div>
-    <div class="form-group">
-        <label for="productSize">Available Sizes</label>
-        <input type="text" class="form-control" id="productSize" placeholder="Product Size/s...">
-    </div>
-    <div class="form-group">
-        <label for="productBrand">Brand/s</label>
-        <input type="text" class="form-control" id="productBrand" placeholder="Product Brand/s...">
-    </div>
-    <div class="form-group">
-        <label for="otherDescription">Other Descriptions</label>
-        <input type="text" class="form-control" id="otherDescription" placeholder="Product Other Descriptions...">
-    </div>
-    <div class="form-group">
-        <label for="productPrice">Price/s</label>
-        <input type="text" class="form-control" id="productPrice" placeholder="Product Prize/s...">
-    </div>
-    <div class="form-group">
-        <label for="stocks">Number of Stocks</label>
-        <input type="text" class="form-control" id="stocks" placeholder="Total Number Of Stocks...">
-    </div>
-    <div class="submit-btn">
-    <input class="btn btn-primary" type="submit" value="Submit">
-    </div>
-    </form>
+        <div class="card ">
+            <div class="card-header bg-transparent d-flex justify-content-between align-items-end">
+                <h1>Product Create</h1>
+            </div>
 
+            <div class="card-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name"><b>Product Name</b></label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Product Name...">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="type"><b>Type</b></label>
+                            <select class="form-control" name="type">
+                                <option>Bra</option>
+                                <option>Cap</option>
+                                <option>Coat</option>
+                                <option>Dress</option>
+                                <option>Flip-flops</option>
+                                <option>Gloves</option>
+                                <option>Hat</option>
+                                <option>High Heels</option>
+                                <option>Hoodies</option>
+                                <option>Gyro Clothes</option>
+                                <option>Jeans</option>
+                                <option>Polo-shirt</option>
+                                <option>Sandals</option>
+                                <option>Scarf</option>
+                                <option>Shirt</option>
+                                <option>Shoes</option>
+                                <option>Short</option>
+                                <option>Skirt</option>
+                                <option>Socks</option>
+                                <option>Suit</option>
+                                <option>Sunglasses</option>
+                                <option>Sweater</option>
+                                <option>Swimsuit</option>
+                                <option>Tie</option>
+                                <option>T-shirt</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="brand"><b>Product Brand</b></label>
+                            <select class="form-control" name="brand" multiple>
+                                <option>Adidas</option>
+                                <option>Calvin Klein</option>
+                                <option>George</option>
+                                <option>Guess</option>
+                                <option>G-Star</option>
+                                <option>Hollister</option>
+                                <option>Lucky Brand</option>
+                                <option>Nike</option>
+                                <option>Patagonia</option>
+                                <option>Ralph & Lauren</option>
+                                <option>TU</option>
+                                <option>Your M&S</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="size"><b>Available Sizes</b></label>
+                            <select class="form-control" name="size" multiple>
+                            <optgroup label="Shirts/Polo/Jackets/Shorts/Jeans/Dresse/Sweater/Bra">
+                                <option>XXS</option>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XL</option>
+                            </optgroup>    
+                            <optgroup label="Shoes/Sandals/High Heels/Flip-Flops">
+                                <option>4"inches</option>
+                                <option>4.25"inches</option>
+                                <option>4.5"inches</option>
+                                <option>4.75"inches</option>
+                                <option>5"inches</option>
+                                <option>5.25"inches</option>
+                                <option>5.5"inches</option>
+                                <option>5.75"inches</option>
+                                <option>6"inches</option>
+                                <option>6.25"inches</option>
+                                <option>6.5"inches</option>
+                                <option>6.75"inches</option>
+                            </optgroup>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="color"><b>Color</b></label>
+                            <input type="text" class="form-control" name="color" id="color" placeholder="Product Color...">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="price"><b>Price</b></label>
+                            <input type="text" class="form-control" id="price" placeholder="Product Price...">
+                        </div>
+
+                        <div class="form-group col-md-4">
+                            <label for="stocks"><b>Number of Stocks</b></label>
+                            <input type="number" class="form-control" id="stocks" placeholder="Total Number Of Stocks...">
+                        </div>
+                    </div>
+
+                    <label for="description"><b>Other Descriptions</b></label>
+                    <textarea type="text" class="form-control" id="description" placeholder="Other Descriptions..."></textarea>
+                    <br>
+                    <div class="submit-btn">
+                        <input class="btn btn-primary" type="submit" value="Create Product">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     
 @endsection

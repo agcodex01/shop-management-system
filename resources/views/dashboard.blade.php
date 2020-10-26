@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="card border-0 bg-transparent">
+        <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between">
                 <b>Dashboard</b>
                 <span>{{ date('D d, M. Y') }}</span>
@@ -19,7 +19,7 @@
                                     <b>( 14 )</b>
                                 </div>
 
-                                <h4 class="mt-3 font-weight-bold">CUSTOMER </h4>
+                                <h4 class="mt-3 font-weight-bold">CUSTOMERS </h4>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,14 @@
 
 
                     <div class="col-md-12 mt-5">
-                        <canvas id="myChart" width="400" height="200"></canvas>
+                        <div class="card">
+                            <div class="card-header">
+                                Montly Report
+                            </div>
+                            <div class="card-body">
+                                <canvas id="myChart" width="400" height="200"></canvas>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

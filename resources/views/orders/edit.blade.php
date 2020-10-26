@@ -13,7 +13,7 @@
           <li class="list-group-item">Status: Single</li>
         </ul>
         <br>
-        <div class="card border-0 bg-transparent">
+        <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between align-items-center">
                 <b>Product List</b>
 
@@ -30,14 +30,14 @@
                         </tr>
                     </thead>
                     <tbody>
-               
+
                             <tr>
                                 <td>Shoes</td>
                                 <td>130</td>
                                 <td>20</td>
                                 <td>2323</td>
                             </tr>
-                  
+
                     </tbody>
                 </table>
             </div>

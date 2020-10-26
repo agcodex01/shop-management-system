@@ -20,6 +20,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
-Route::resource('users', 'UserController');
+
+Route::prefix('suppliers')->group(function(){
+    Route::get('','UserController@suppliers')->name('suppliers.index');
+    Route::get('{user}/show','UserController@show')->name('supplier.show');
+    Route::view('create','suppliers.create')->name('supplier.create');
+    Route::get('{user}/request_product','UserController@requestProduct')->name('suppliers.request');
+    Route::post('','UserController@store')->name('supplier.store');
+    Route::put('{user}','UserController@update')->name('suppliers.update');
+});
+Route::resource('customers', 'UserController');
 Route::resource('products', 'ProductController');
 Route::resource('orders', 'OrderController');
+Route::resource('deliveries', 'DeliveryController');

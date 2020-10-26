@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Delivery;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class DeliveryController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('orders.index');
-    }
-
-    public function deliveries()
     {
         return view('deliveries.index');
     }
@@ -29,7 +24,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        return view('deliveries.create');
     }
 
     /**
@@ -46,33 +41,33 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Delivery $delivery)
     {
-        return view('orders.show');
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Delivery $delivery)
     {
-        return view('orders.edit');
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Delivery $delivery)
     {
         //
     }
@@ -80,10 +75,10 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Delivery $delivery)
     {
         //
     }

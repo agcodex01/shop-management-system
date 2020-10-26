@@ -2,10 +2,9 @@
 
 namespace App;
 
-//use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Mongodb\Eloquent\Model;
-
-class Product extends Model
+class Category extends Model
 {
     //
 }

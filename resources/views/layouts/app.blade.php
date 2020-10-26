@@ -13,13 +13,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -63,8 +63,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                             document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -82,25 +83,50 @@
         <main class="p-4 mt-5">
             <div class="row">
                 @auth
-                    <div class="col-md-3 bg-danger  position-relative" >
-
-                        <div class="card p-0 m-0 position-fixed " style="min-width: 25%">
-                            <div class="card-header"><i class="fa fa-bars"></i> Menu</div>
-                            <div class="card-body p-0 ">
+                    <div class="col-md-3">
+                        <div class="card p-0 m-0  " style="min-width: 25%">
+                            <div class="card-header bg-transparent"><i class="fa fa-bars"></i> Menu</div>
+                            <div class="card-body px-0">
 
                                 <ul class="list-group list-group-flush">
-                                    <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action">Dashboard</a>
-                                    <a href="{{ route('products.index') }}" class="list-group-item list-group-item-action">Products</a>
-                                    <a href="{{ route('orders.index') }}" class="list-group-item list-group-item-action">Orders</a>
+                                    <a href="{{ route('dashboard') }}"
+                                        class="list-group-item list-group-item-action
+                                        @if(Route::currentRouteName() == 'dashboard')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa fa-desktop mr-2"></i> Dashboard
+                                    </a>
+                                    <a href="{{ route('products.index') }}"
+                                        class="list-group-item list-group-item-action
+                                        @if(Route::currentRouteName() == 'products.index')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa fa-shopping-bag mr-2"></i> Products
+                                    </a>
+                                    <a href="{{ route('orders.index') }}"
+                                        class="list-group-item list-group-item-action
+                                        @if(Route::currentRouteName() == 'orders.index')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa fa-list-alt mr-2"></i> Orders
+                                    </a>
+                                    <a href="{{ route('customers.index') }}"
+                                        class="list-group-item list-group-item-action
+                                        @if(Route::currentRouteName() == 'customers.index')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa  fa-user-circle-o mr-2"></i> Customers
+                                    </a>
+                                    <a href="{{ route('suppliers.index') }}"
+                                        class="list-group-item list-group-item-action
+                                        @if(Route::currentRouteName() == 'suppliers.index')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa  fa-user-circle-o mr-2"></i> Suppliers
+                                    </a>
+                                    <a href="{{ route('deliveries.index')}}"
+                                        class="list-group-item list-group-item-action @if(Route::currentRouteName() == 'deliveries.index')  list-group-item-action active @endif h5 px-4">
+                                        <i class="fa  fa-truck mr-2"></i> Deliveries
+                                    </a>
                                 </ul>
                             </div>
                         </div>
 
                     </div>
-                    <div class="col-md-8 offset-md-3">
-                @else
-                    <div class="col-md-12">
-                @endauth
+                    <div class="col-md-8">
+                    @else
+                        <div class="col-md-12">
+                        @endauth
                         @yield('content')
                     </div>
                 </div>

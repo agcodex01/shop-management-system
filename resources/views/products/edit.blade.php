@@ -4,20 +4,25 @@
 <div class="container">
         <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between align-items-end">
-                <h1>Edit Product</h1>
+                <b>
+                    <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm mr-2">
+                        <i class="fa fa-chevron-left"></i> back
+                    </a>
+                    Update Product
+                </b>
             </div>
 
             <div class="card-body">
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="name"><b>New Product Name</b></label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Product Name...">
+                            <label for="newName"><b>New Product Name</b></label>
+                            <input type="text" class="form-control" name="newName" id="newName" placeholder="Product Name...">
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="type"><b>Select New Type</b></label>
-                            <select class="form-control" name="type">
+                            <label for="newType"><b>Select New Type</b></label>
+                            <select class="form-control" name="newType">
                                 <option>Bra</option>
                                 <option>Cap</option>
                                 <option>Coat</option>
@@ -48,9 +53,9 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="brand"><b>Select New Product Brand</b></label>
-                            <select class="form-control" name="brand" multiple>
+                        <div class="form-group col-md-3">
+                            <label for="newBrand"><b>Select New Product Brand</b></label>
+                            <select class="form-control" name="newBrand" multiple>
                                 <option>Adidas</option>
                                 <option>Calvin Klein</option>
                                 <option>George</option>
@@ -66,9 +71,23 @@
                             </select>
                         </div>
 
+                        <div class="form-group col-md-3">
+                            <label for="newColor"><b>New Color</b></label>
+                            <select class="form-control" name="newColor" multiple>
+                                <option>Black</option>
+                                <option>Blue</option>
+                                <option>Brown</option>
+                                <option>Greed</option>
+                                <option>Orange</option>
+                                <option>Purple</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
+                            </select>
+                        </div>
+
                         <div class="form-group col-md-6">
-                            <label for="size"><b>Select New Available Sizes</b></label>
-                            <select class="form-control" name="size" multiple>
+                            <label for="newSize"><b>Select New Available Sizes</b></label>
+                            <select class="form-control" name="newSize" multiple>
                             <optgroup label="Shirts/Polo/Jackets/Shorts/Jeans/Dresse/Sweater/Bra">
                                 <option>XXS</option>
                                 <option>XS</option>
@@ -97,19 +116,14 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="color"><b>New Color</b></label>
-                            <input type="text" class="form-control" name="color" id="color" placeholder="Product Color...">
+                        <div class="form-group col-md-6">
+                            <label for="newPrice"><b>New Price</b></label>
+                            <input type="number" class="form-control" id="newPrice" placeholder="Product Price...">
                         </div>
 
-                        <div class="form-group col-md-4">
-                            <label for="price"><b>New Price</b></label>
-                            <input type="text" class="form-control" id="price" placeholder="Product Price...">
-                        </div>
-
-                        <div class="form-group col-md-4">
-                            <label for="stocks"><b>New Number of Stocks</b></label>
-                            <input type="number" class="form-control" id="stocks" placeholder="Total Number Of Stocks...">
+                        <div class="form-group col-md-6">
+                            <label for="newStocks"><b>New Number of Stocks</b></label>
+                            <input type="number" class="form-control" id="newStocks" placeholder="Total Number Of Stocks...">
                         </div>
                     </div>
 

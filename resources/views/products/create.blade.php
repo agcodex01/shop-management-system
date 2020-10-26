@@ -4,7 +4,12 @@
     <div class="container">
         <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between align-items-end">
-                <h1>Product Create</h1>
+            <b>
+                    <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm mr-2">
+                        <i class="fa fa-chevron-left"></i> back
+                    </a>
+                    Create Product
+                </b>
             </div>
 
             <div class="card-body">
@@ -48,7 +53,7 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="brand"><b>Product Brand</b></label>
                             <select class="form-control" name="brand" multiple>
                                 <option>Adidas</option>
@@ -65,6 +70,21 @@
                                 <option>Your M&S</option>
                             </select>
                         </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="color"><b>Color</b></label>
+                            <select class="form-control" name="color" multiple>
+                                <option>Black</option>
+                                <option>Blue</option>
+                                <option>Brown</option>
+                                <option>Greed</option>
+                                <option>Orange</option>
+                                <option>Purple</option>
+                                <option>Red</option>
+                                <option>Yellow</option>
+                            </select>
+                        </div>
+
 
                         <div class="form-group col-md-6">
                             <label for="size"><b>Available Sizes</b></label>
@@ -97,17 +117,12 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="color"><b>Color</b></label>
-                            <input type="text" class="form-control" name="color" id="color" placeholder="Product Color...">
-                        </div>
-
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="price"><b>Price</b></label>
-                            <input type="text" class="form-control" id="price" placeholder="Product Price...">
+                            <input type="number" class="form-control" id="price" placeholder="Product Price...">
                         </div>
 
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-6">
                             <label for="stocks"><b>Number of Stocks</b></label>
                             <input type="number" class="form-control" id="stocks" placeholder="Total Number Of Stocks...">
                         </div>

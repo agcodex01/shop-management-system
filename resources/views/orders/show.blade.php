@@ -2,7 +2,17 @@
 
 @section('content')
     <div class="container">
-        <i class="fa fa-building" aria-hidden="true">Tikyang Company</i>
+        <div class="card">
+        <div class="card-header bg-transparent d-flex justify-content-between align-items-end">
+                <b>
+                    <a href="{{ route('orders.index') }}" class="btn btn-primary btn-sm mr-2">
+                        <i class="fa fa-chevron-left"></i> back
+                    </a>
+                    Order Details
+                </b>
+            </div>
+            <div class="card-body">
+            <i class="fa fa-building" aria-hidden="true">Tikyang Company</i>
         <p style="margin-left: 80%; margin-top: -2%; font-weight: bold;"> Date: </p>
         <div class="row">
             <div class="col-sm-4 ">
@@ -129,6 +139,8 @@
               </div>
 
 
+            </div>
+        </div>
 
     </div>
 

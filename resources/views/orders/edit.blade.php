@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Order Update</h1>
+        <!-- <h1>Order Update</h1>
         <ul class="list-group">
           <li class="list-group-item disabled">Id :</li>
           <li class="list-group-item">Customer Name: </li>
@@ -11,8 +11,7 @@
           <li class="list-group-item">Total Amount:</li>
           <li class="list-group-item">Delivery Fee:</li>
           <li class="list-group-item">Status: Single</li>
-        </ul>
-        <br>
+        </ul> -->
         <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between align-items-center">
                 <b>Product List</b>

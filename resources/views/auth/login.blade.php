@@ -13,8 +13,6 @@
 
                             <div class="form-group">
                                 <label for="email">{{ __('E-Mail Address') }}</label>
-
-
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa2x fa-envelope-o"

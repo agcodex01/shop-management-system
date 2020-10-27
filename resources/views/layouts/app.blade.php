@@ -85,7 +85,7 @@
         <main class="p-4 mt-5">
             <div class="row">
                 @auth
-                    <div class="col-md-3">
+                    <div class="col-md-3 ">
                         <div class="card p-0 m-0  " style="min-width: 25%">
                             <div class="card-header bg-transparent"><i class="fa fa-bars"></i> Menu</div>
                             <div class="card-body px-0">

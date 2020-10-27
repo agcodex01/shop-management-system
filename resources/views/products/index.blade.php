@@ -28,7 +28,7 @@
                                 <td>{{ $product->price }}</td>
                                 <td>105</td>
                                 <td>
-                                    <a href="{{ route('products.edit', 1) }}" class="btn btn-primary py-0">
+                                    <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary py-0">
                                         view
                                     </a>
                                     <button type="button" class="btn btn-sm delete" data-toggle="modal" data-target="#deleteProduct" data-productname="{{$product->name}}"

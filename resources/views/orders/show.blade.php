@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <i class="fa fa-building" aria-hidden="true">Tikyang Company</i> 
+        <i class="fa fa-building" aria-hidden="true">Tikyang Company</i>
         <p style="margin-left: 80%; margin-top: -2%; font-weight: bold;"> Date: </p>
             <div class="row">
                 <div class="col-sm-4 ">
@@ -25,6 +25,8 @@
                     Email: john.doe@example.com
                   </address>
                 </div>
+                <br>
+                <br>
                 <div class="col-sm-4 ">
                   <b>Invoice #007612</b><br>
                   <br>
@@ -74,6 +76,60 @@
                 </tr>
                 </tbody>
               </table>
+              <br>
+              <div class="row">
+                <!-- accepted payments column -->
+                <div class="col-6">
+                  <p class="lead">Payment Methods:</p>
+                  <img src="https://adminlte.io/themes/dev/AdminLTE/dist/img/credit/visa.png" alt="Visa">
+                  <img src="https://adminlte.io/themes/dev/AdminLTE/dist/img/credit/mastercard.png" alt="Mastercard">
+                  <img src="https://adminlte.io/themes/dev/AdminLTE/dist/img/credit/american-express.png" alt="American Express">
+                  <img src="https://adminlte.io/themes/dev/AdminLTE/dist/img/credit/paypal2.png" alt="Paypal">
+
+                  <p class="text-muted well well-sm shadow-none" style="margin-top: 10px;">
+                    Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem
+                    plugg
+                    dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra.
+                  </p>
+                </div>
+                <!-- /.col -->
+                <div class="col-6">
+                  <p class="lead">Amount Due 2/22/2014</p>
+
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tbody><tr>
+                        <th style="width:50%">Subtotal:</th>
+                        <td>$250.30</td>
+                      </tr>
+                      <tr>
+                        <th>Tax (9.3%)</th>
+                        <td>$10.34</td>
+                      </tr>
+                      <tr>
+                        <th>Shipping:</th>
+                        <td>$5.80</td>
+                      </tr>
+                      <tr>
+                        <th>Total:</th>
+                        <td>$265.24</td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+                  <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                    Payment
+                  </button>
+                  <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                    <i class="fas fa-download"></i> Generate PDF
+                  </button>
+                </div>
+              </div>
+
+
+
     </div>
 
 

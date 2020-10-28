@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\User;
+use App\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,8 @@ class UserController extends Controller
      */
     public function dashboard()
     {
+        $monthlyReport = Order::all();
+        dd($monthlyReport);
         return view('dashboard');
     }
 

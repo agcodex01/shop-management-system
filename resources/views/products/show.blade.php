@@ -116,11 +116,22 @@
                             @enderror
                         </div>
 
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-3">
                             <label for="stocks"><b>Number of Stocks</b></label>
                             <input required type="number" class="form-control @error('stocks') is-invalid @enderror"
-                                id="stocks" name="stocks" placeholder="Total Number Of Stocks..." min="1"
+                                id="stocks" name="stocks" placeholder="Total Number Of Stocks..." min="1" readonly
                                 value="{{ $product->stocks }}">
+                            @error('stocks')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="quantity"><b>Add Stocks Quantity</b></label>
+                            <input required type="number" class="form-control @error('quantity') is-invalid @enderror"
+                                id="quantity" name="quantity"  min="0"
+                                value="0">
                             @error('stocks')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

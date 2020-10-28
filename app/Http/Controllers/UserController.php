@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $monthlyReport = Order::all();
         dd($monthlyReport);
-        return view('dashboard');
+        return view('dashboard',compact('monthlyReport'));
     }
 
     public function suppliers()

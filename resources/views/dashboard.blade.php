@@ -4,8 +4,9 @@
     <div class="container">
         <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between">
-                <b>Dashboard</b>
+                <b>Dashboard {{$monthlyReport->updated_at}}</b>
                 <span>{{ date('D d, M. Y') }}</span>
+
             </div>
             <div class="card-body">
                 <div class="row">

@@ -62,7 +62,12 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
-        $product->update($request->validated());
+        $stocks = [
+            'stocks' => $request->validated()['stocks'] + $request->quantity
+        ];
+        $newProductDeatails = collect(collect($request->validated())->except('stocks'))->merge($stocks)->all();
+
+        $product->update($newProductDeatails);
         return back();
     }
 

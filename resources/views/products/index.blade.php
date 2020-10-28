@@ -26,7 +26,7 @@
                                 <th scope="row">1</th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
-                                <td>105</td>
+                                <td>{{ $product->stocks}}</td>
                                 <td>
                                     <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary py-0">
                                         view

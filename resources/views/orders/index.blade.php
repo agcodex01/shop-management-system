@@ -12,40 +12,29 @@
                 </b>
             </div>
             <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Customer Name</th>
-                            <th scope="col">Date of Order</th>
-                            <th scope="col">Location</th>
-                            <th scope="col" >Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">12</th>
-                            <td>Rhea Yang</td>
-                            <td>Oct. 21, 2020</td>
-                            <td>asd</td>
-                            <td class="d-inline-flex">
-                                <a href="{{ route('orders.show',1)}}"> view</a>
-                                <div class="dropdown">
-                                    <a class="btn btn-sm btn-success dropdown-toggle ml-3" href="#" role="button"
-                                        id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        update status
-                                    </a>
 
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <a class="dropdown-item active" href="#">pending</a>
-                                        <a class="dropdown-item" href="#">confirmed</a>
-                                        <a class="dropdown-item" href="#">complete</a>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link w-25 disabled" >Status</a>
+                        <a class="nav-item nav-link w-25 active" id="pending-tab" data-toggle="tab" href="#pending"
+                            role="tab" aria-controls="pending" aria-selected="true">Pending</a>
+                        <a class="nav-item nav-link w-25" id="confirmed-tab" data-toggle="tab" href="#confirmed"
+                            role="tab" aria-controls="confirmed" aria-selected="false">Confirmed</a>
+                        <a class="nav-item nav-link w-25" id="completed-tab" data-toggle="tab" href="#completed"
+                            role="tab" aria-controls="completed" aria-selected="false">Complete</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+                        <x-orders></x-orders>
+                    </div>
+                    <div class="tab-pane fade" id="confirmed" role="tabpanel" aria-labelledby="confirmed-tab">
+                        <x-orders></x-orders>
+                    </div>
+                    <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="completed-tab">
+                        <x-orders></x-orders>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

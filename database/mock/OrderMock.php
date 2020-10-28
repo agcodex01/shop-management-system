@@ -6,7 +6,10 @@ class OrderMock {
     public static function orders():array
     {
         return array(
-            array(), // Orders
+            array(
+                'user_id'=>1,
+
+            ), // Orders
         );
     }
 }

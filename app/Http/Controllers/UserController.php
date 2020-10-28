@@ -27,8 +27,8 @@ class UserController extends Controller
      */
     public function dashboard()
     {
-        $monthlyReport = Order::all();
-        dd($monthlyReport);
+        // $monthlyReport = Order::all();
+        // dd($monthlyReport);
         return view('dashboard');
     }
 
@@ -40,7 +40,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::where('type','!=','supplier')->get();
+        $users = User::where('type','customer')->get();
         return view('customers.index',compact('users'));
     }
 

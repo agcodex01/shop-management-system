@@ -25,8 +25,8 @@
 </head>
 
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md bg-primary shadow-sm">
+    <div id="app" class="bg-img">
+        <nav class="navbar navbar-expand-md bg-transparent ">
             <div class="container">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
                     <b>{{ config('app.name', 'Laravel') }}</b>
@@ -48,18 +48,20 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link  btn btn-outline-primary text-white rounded px-5" href="{{ route('login') }}">
+                                    <strong>{{ __('Login') }}</strong>
+                                </a>
                             </li>
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link text-white dropdown-toggle" href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link btn btn-outline-primary text-white px-5 shadow-sm dropdown-toggle" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                   <strong>{{ Auth::user()->name }}</strong>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

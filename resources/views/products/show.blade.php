@@ -65,11 +65,12 @@
                                 @foreach (config('product.sizes') as $sizeLabel => $sizes)
                                     <optgroup label="{{ $sizeLabel }}">
                                         @foreach ($sizes as $size)
-                                            @foreach ($product->sizes as $productSize)
-                                                <option @if ($productSize == $size)
+                                            <option @foreach ($product->sizes as $productSize)
+                                                @if ($productSize == $size)
                                                     @{{ selected }}
-                                            @endif > {{ $size }}</option>
-                                        @endforeach
+                                                @endif
+                                        @endforeach >
+                                        {{ $size }}</option>
                                 @endforeach
                                 </optgroup>
                                 @endforeach
@@ -85,9 +86,13 @@
                             <select required class="form-control @error('colors') is-invalid @enderror" name="colors[]"
                                 multiple>
                                 @foreach (config('product.colors') as $color)
-                                    @foreach ($product->colors as $productColor)
-                                        <option @if ($productColor == $color) @{{ selected }} @endif > {{ $color }}</option>
-                                    @endforeach
+                                    <option @foreach ($product->colors as $productColor)
+                                            @if ($productColor == $color)
+                                                @{{ selected }}
+                                            @endif
+                                        @endforeach
+                                > {{ $color }}</option>
+
                                 @endforeach
                             </select>
                             @error('sizes')
@@ -102,7 +107,8 @@
                         <div class="form-group col-md-6">
                             <label for="price"><b>Price</b></label>
                             <input required type="number" class="form-control @error('price') is-invalid @enderror"
-                                id="price" name="price" placeholder="Product Price..." min="1" value="{{ $product->price }}">
+                                id="price" name="price" placeholder="Product Price..." min="1"
+                                value="{{ $product->price }}">
                             @error('price')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -125,7 +131,8 @@
                     <div class="form-group">
                         <label for="description"><b>Other Descriptions</b></label>
                         <textarea required type="text" class="form-control @error('description') is-invalid @enderror"
-                            id="description" name="description" placeholder="Other Descriptions..." >{{ $product->description}}</textarea>
+                            id="description" name="description"
+                            placeholder="Other Descriptions...">{{ $product->description }}</textarea>
                         @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

@@ -5,13 +5,10 @@
         <div class="card ">
             <div class="card-header bg-transparent d-flex justify-content-between">
                 <b>Dashboard</b>
-                {{-- <span>{{ date('D d, M. Y') }}</span> --}}
-                <span>{{ now() }}</span>
+                <span>{{ date('D d, M. Y') }}</span>
             </div>
-
             <div class="card-body">
                 <div class="row">
-
                     <div class="col-md-4">
                         <div class="card rouded-1 bg-primary">
                             <div class="card-body text-center p-4  text-white">
@@ -49,9 +46,35 @@
                         </div>
                     </div>
 
-
                     <div class="col-md-12 mt-5">
-                        <div class="card">
+                        <div class="card border-0">
+                            <div class="card-header bg-transparent">
+                                <strong>Best Seller Product</strong>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Total Sales</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeans</td>
+                                        <td>&#x20B1; 3000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeans</td>
+                                        <td>&#x20B1; 3000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jeans</td>
+                                        <td>&#x20B1; 3000.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ">
+                        <div class="card border-0">
                             <div class="card-header bg-transparent">
                                 <strong>Montly Report</strong>
                             </div>

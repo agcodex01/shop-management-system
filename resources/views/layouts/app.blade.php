@@ -21,11 +21,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        .rouded-1{
-            border-radius: 8px !important ;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
 </head>
 
 <body>
@@ -86,7 +82,7 @@
             <div class="row">
                 @auth
                     <div class="col-md-3 ">
-                        <div class="card p-0 m-0  " style="min-width: 25%">
+                        <div class="card p-0 m-0">
                             <div class="card-header bg-transparent"><i class="fa fa-bars"></i> Menu</div>
                             <div class="card-body px-0">
 

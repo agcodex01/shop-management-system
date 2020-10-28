@@ -17,4 +17,9 @@ class Product extends Model
         'sizes' => 'array'
     ];
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
 }

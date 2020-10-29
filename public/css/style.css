@@ -9,3 +9,8 @@
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.avatar {
+    width: 30px;
+    height: 30px;
+}

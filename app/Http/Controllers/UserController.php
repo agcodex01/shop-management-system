@@ -6,6 +6,7 @@ use App\Http\Requests\UserRequest;
 use App\User;
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 class UserController extends Controller
@@ -31,7 +32,11 @@ class UserController extends Controller
         // dd($monthlyReport);
         return view('dashboard');
     }
-
+    public function adminProfile()
+    {
+        $user = Auth::user();
+        return view('accounts.index',compact('user'));
+    }
     public function suppliers()
     {
         $users = User::where('type','supplier')->get();

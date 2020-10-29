@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('', 'UserController@store')->name('supplier.store');
         Route::put('{user}', 'UserController@update')->name('suppliers.update');
     });
+    Route::get('/admin/accounts/profile','UserController@adminProfile')->name('accounts.admin');
     Route::resource('customers', 'UserController');
     Route::resource('products', 'ProductController');
     Route::resource('orders', 'OrderController');

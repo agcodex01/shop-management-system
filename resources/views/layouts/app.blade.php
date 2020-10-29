@@ -59,12 +59,19 @@
                             @endif --}}
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link btn btn-outline-primary text-white px-5 shadow-sm dropdown-toggle" href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link btn btn-outline-primary text-white px-5 shadow-sm " href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   <strong>{{ Auth::user()->name }}</strong>
+                                    <img src="{{ asset('images/admin.png')}}"   class="avatar rounded-circle" alt="">
+                                   <strong class="ml-2">{{ Auth::user()->name }}</strong>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('accounts.admin') }}">
+                                        {{ __('Profile') }}
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
@@ -81,6 +88,10 @@
         </nav>
 
         <main class="p-4 mt-5">
+            <section>
+                @yield('accounts')
+            </section>
+            @if (Route::currentRouteName() != "accounts.admin")
             <div class="row">
                 @auth
                     <div class="col-md-3 ">
@@ -130,7 +141,9 @@
                         @yield('content')
                     </div>
                 </div>
-        </main>
+
+            @endif
+                   </main>
     </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>

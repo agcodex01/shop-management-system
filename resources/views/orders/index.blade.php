@@ -26,13 +26,16 @@
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
-                        <x-orders></x-orders>
+                        <x-orders :orders="$orders['pending']"></x-orders>
+                        {{ $orders['pending']->links()}}
                     </div>
                     <div class="tab-pane fade" id="confirmed" role="tabpanel" aria-labelledby="confirmed-tab">
-                        <x-orders></x-orders>
+                        <x-orders :orders="$orders['confirmed']"></x-orders>
+                        {{ $orders['confirmed']->links()}}
                     </div>
                     <div class="tab-pane fade" id="completed" role="tabpanel" aria-labelledby="completed-tab">
-                        <x-orders></x-orders>
+                        <x-orders :orders="$orders['completed']"></x-orders>
+                        {{ $orders['completed']->links()}}
                     </div>
                 </div>
             </div>

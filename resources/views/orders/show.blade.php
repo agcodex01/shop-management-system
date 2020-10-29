@@ -30,11 +30,11 @@
                     <div class="col-sm-4 ">
                         To
                         <address>
-                            <strong>Roxas Precy Jane</strong><br>
+                            <strong>{{ $order->user->name}}</strong><br>
                             795 Folsom Ave, Suite 600<br>
                             San Francisco, CA 94107<br>
-                            Phone: (555) 539-1037<br>
-                            Email: john.doe@example.com
+                            Phone: {{ $order->user->contact_number }}<br>
+                            Email: {{ $order->user->email}}
                         </address>
                     </div>
                     <br>

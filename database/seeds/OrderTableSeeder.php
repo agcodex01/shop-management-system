@@ -13,8 +13,9 @@ class OrderTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach(OrderMock::orders() as $order){
-            Order::create($order);
-        }
+        // foreach(OrderMock::orders() as $order){
+        //     Order::create($order);
+        // }
+        factory(App\Order::class,10)->state('pending')->create();
     }
 }

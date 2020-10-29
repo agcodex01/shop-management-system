@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -14,7 +15,12 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('orders.index');
+        $orders = [
+            'pending' => Order::where('status','pending')->with('user')->paginate(5),
+            'confirmed' => Order::where('status','confirmed')->with('user')->paginate(3),
+            'completed' => Order::where('status','completed')->with('user')->paginate(2),
+        ];
+        return view('orders.index',compact('orders'));
     }
 
     public function deliveries()
@@ -49,9 +55,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Order $order)
     {
-        return view('orders.show');
+        return view('orders.show',compact('order'));
     }
 
     /**

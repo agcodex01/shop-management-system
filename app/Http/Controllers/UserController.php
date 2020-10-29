@@ -29,7 +29,9 @@ class UserController extends Controller
     {
         // $monthlyReport = Order::all();
         // dd($monthlyReport);
-        return view('dashboard');
+        $totalOrders = Order::all()->count();
+        $totalCustomers = User::where('type','customer')->count();
+        return view('dashboard',compact('totalOrders','totalCustomers'));
     }
 
     public function suppliers()

@@ -25,7 +25,7 @@
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
-                                <td>Talamban</td>
+                                <td>{{ $user->address}}</td>
                                 <td>
                                     <a href="{{ route('customers.show', $user->id) }}" class="btn btn-primary py-0 ">view</a>
                                 </td>

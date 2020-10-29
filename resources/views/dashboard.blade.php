@@ -10,11 +10,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="card rouded-1 bg-primary">
+                        <div class="card rouded-1 bg-danger shadow">
                             <div class="card-body text-center p-4  text-white">
                                 <div class="d-inline-flex">
                                     <i class="fa fa-3x fa-user"></i>
-                                    <b>( 14 )</b>
+                                    <b>( {{ $totalCustomers}} )</b>
                                 </div>
 
                                 <h5 class="mt-3 font-weight-bold">CUSTOMERS </h5>
@@ -22,11 +22,11 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card rouded-1 bg-primary">
+                        <div class="card rouded-1 bg-success shadow">
                             <div class="card-body text-center p-4  text-white">
                                 <div class="d-inline-flex">
                                     <i class="fa fa-3x fa-list-alt mr-2"></i>
-                                   <b> ( 57 ) </b>
+                                   <b> ( {{$totalOrders}} ) </b>
                                 </div>
 
                                 <h5 class="mt-3 font-weight-bold">ORDERS</h5>
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card rouded-1 bg-primary">
+                        <div class="card rouded-1 bg-primary shadow">
                             <div class="card-body text-center p-4  text-white">
                                 <div class="d-inline-flex">
                                     <i class="fa fa-3x fa-truck mr-2"></i>

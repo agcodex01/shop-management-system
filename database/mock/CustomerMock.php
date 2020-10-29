@@ -15,7 +15,7 @@ class CustomerMock {
                 'type' => 'customer'
             ), // Customers
             array(
-                'name' => 'May',
+                'name' => 'Rhea May Ardiente',
                 'email' => 'rhea0951@gmail.com',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', //password
                 'address' => 'Nasipit Talamban Cebu City',

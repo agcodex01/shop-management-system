@@ -59,7 +59,7 @@
                             @endif --}}
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link btn btn-outline-primary text-white px-5 shadow-sm " href="#" role="button"
+                                <a id="navbarDropdown" class="nav-link btn border-primary text-white px-5 shadow-sm opacity-1" href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <img src="{{ Auth::user()->image_url ??  asset('images/admin.png')}}"   class="avatar rounded-circle" alt="">
                                    <strong class="ml-2">{{ Auth::user()->name }}</strong>
@@ -134,7 +134,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                     @else
                         <div class="col-md-12">
                         @endauth

@@ -22,7 +22,7 @@
                                                         <div class="mx-auto" style="width: 140px;">
                                                             <div class="d-flex justify-content-center align-items-center rounded rounded-circle"
                                                                 style="height: 140px; background-color: rgb(233, 236, 239);">
-                                                                <img width="100%" height="140" id="profileImage" src="{{ $user->image_url}}"
+                                                                <img width="100%" height="140" id="profileImage" src="{{ old('image_url') ?? $user->image_url   }}"
                                                                     alt="Profile Image" class="rounded-circle">
                                                             </div>
                                                         </div>
@@ -41,9 +41,9 @@
                                                                             class="input-group-text bg-primary text-white"><i
                                                                                 class="fa fa-fw fa-camera"></i></span>
                                                                     </div>
-                                                                    <input type="text" class="form-control" id="imageUrl"
+                                                                    <input type="text" class="form-control @error('image_url') is-invalid @enderror" id="imageUrl"
                                                                         name="image_url" placeholder="Image url ...."
-                                                                        aria-label="Username"
+                                                                        aria-label="Username" value="{{ old('image_url') ?? $user->image_url}}"
                                                                         aria-describedby="basic-addon1">
                                                                         @error('image_url')
                                                                             <span class="invalid-feedback" role="alert">
@@ -73,7 +73,7 @@
                                                                             <div class="form-group">
                                                                                 <label>Full Name</label>
                                                                                 <input class="form-control @error('name') is-invalid @enderror" type="text"
-                                                                                    name="name" value="{{ $user->name }}">
+                                                                                    name="name" value="{{ old('name') ?? $user->name    }}" >
                                                                                     @error('name')
                                                                                     <span class="invalid-feedback" role="alert">
                                                                                         <strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                                                                             <div class="form-group">
                                                                                 <label>Username</label>
                                                                                 <input class="form-control @error('username') is-invalid @enderror" type="text"
-                                                                                    value="{{ $user->username }}"
+                                                                                    value="{{ old('username') ?? $user->username    }}"
                                                                                     name="username">
                                                                                     @error('username')
                                                                                     <span class="invalid-feedback" role="alert">
@@ -101,7 +101,7 @@
                                                                             <div class="form-group">
                                                                                 <label>Email</label>
                                                                                 <input class="form-control @error('email') is-invalid @enderror" type="enail"
-                                                                                    value="{{ $user->email }}" name="email"
+                                                                                    value="{{old('email') ?? $user->email    }}" name="email"
                                                                                     placeholder="user@example.com">
                                                                                     @error('email')
                                                                                     <span class="invalid-feedback" role="alert">
@@ -114,7 +114,7 @@
                                                                             <div class="form-group">
                                                                                 <label>Number</label>
                                                                                 <input class="form-control @error('contact_number') is-invalid @enderror" type="text"
-                                                                                    value="{{ $user->contact_number }}"
+                                                                                    value="{{ old('contact_number') ?? $user->contact_number   }}"
                                                                                     name="contact_number">
                                                                                     @error('contact_number')
                                                                                     <span class="invalid-feedback" role="alert">
@@ -129,7 +129,7 @@
                                                                             <div class="form-group">
                                                                                 <label>Address</label>
                                                                                 <input class="form-control @error('address') is-invalid @enderror" type="text"
-                                                                                    value="{{ $user->address }}"
+                                                                                    value="{{  old('address') ?? $user->address  }}"
                                                                                     name="address">
                                                                                     @error('address')
                                                                             <span class="invalid-feedback" role="alert">

@@ -53,8 +53,8 @@
                     <div class="form-group row">
                         <label for="number" class="col-sm-3 col-form-label">Contact number</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control @error('number') is-invalid @enderror" name="number" id="number" value="{{ $user->number}}">
-                            @error('number')
+                            <input type="text" class="form-control @error('contact_number') is-invalid @enderror" name="contact_number" id="number" value="{{ $user->contact_number}}">
+                            @error('contact_number')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
                             </span>

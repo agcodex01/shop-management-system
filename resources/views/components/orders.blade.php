@@ -2,10 +2,10 @@
 <table class="table table-responsive">
     <thead>
         <tr>
-            <th scope="col">ORD_ID</th>
-            <th scope="col">Customer_Name</th>
+            <th scope="col"># Order Id</th>
+            <th scope="col">Name</th>
             <th scope="col">Date_of_Order</th>
-            <th scope="col">Address</th>
+            <th scope="col">Location asd</th>
             <th scope="col">Actions</th>
         </tr>
     </thead>

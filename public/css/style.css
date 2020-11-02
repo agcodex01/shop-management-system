@@ -19,4 +19,12 @@ input[type=checkbox]:hover {
     cursor: pointer;
 }
 
+.opacity-1 {
+
+    background-color: rgba(52, 144, 220, 0.4) !important;
+}
+.opacity-1:hover {
+    background-color: rgba(52, 144, 220, 1) !important;;
+}
+
 

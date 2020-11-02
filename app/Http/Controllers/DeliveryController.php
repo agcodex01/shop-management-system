@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Delivery;
+use App\Order;
+use App\OrderProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class DeliveryController extends Controller
 {
@@ -14,7 +17,8 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-        return view('deliveries.index');
+        $deliveries =  Delivery::all();
+        return view('deliveries.index', compact('deliveries'));
     }
 
     /**
@@ -24,7 +28,9 @@ class DeliveryController extends Controller
      */
     public function create()
     {
-        return view('deliveries.create');
+        $orders = Order::where('status', 'confirmed')->where('delivery_id','exists',false)->get();
+
+        return view('deliveries.create', compact('orders'));
     }
 
     /**
@@ -35,7 +41,16 @@ class DeliveryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->orders);
+        $delivery = Delivery::create([
+            'status' => 'pending',
+            'dv_id' => $this->deliveryId()
+        ]);
+        foreach ($request->orders as $id) {
+            $order = Order::find($id);
+            $delivery->orders()->save($order);
+        }
+        return back();
     }
 
     /**
@@ -46,7 +61,8 @@ class DeliveryController extends Controller
      */
     public function show(Delivery $delivery)
     {
-        //
+        $total = $delivery->orders->sum('total');
+        return view('deliveries.show', compact('delivery','total'));
     }
 
     /**
@@ -57,7 +73,6 @@ class DeliveryController extends Controller
      */
     public function edit(Delivery $delivery)
     {
-        //
     }
 
     /**
@@ -81,5 +96,10 @@ class DeliveryController extends Controller
     public function destroy(Delivery $delivery)
     {
         //
+    }
+    public function deliveryId()
+    {
+        $code = Str::upper(Str::random(3));
+        return 'DV-'.$code.'-'.date('Y-md-His');
     }
 }

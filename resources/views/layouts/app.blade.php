@@ -61,7 +61,7 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link btn btn-outline-primary text-white px-5 shadow-sm " href="#" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <img src="{{ asset('images/admin.png')}}"   class="avatar rounded-circle" alt="">
+                                    <img src="{{ Auth::user()->image_url ??  asset('images/admin.png')}}"   class="avatar rounded-circle" alt="">
                                    <strong class="ml-2">{{ Auth::user()->name }}</strong>
                                 </a>
 

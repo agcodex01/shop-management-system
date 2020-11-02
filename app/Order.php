@@ -6,11 +6,9 @@ namespace App;
 use Jenssegers\Mongodb\Eloquent\Model;
 class Order extends Model
 {
-    public function products()
-    {
-        return $this->belongsToMany(Product::class);
-    }
-
+    protected $fillable = [
+        'status',
+    ];
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -19,6 +17,11 @@ class Order extends Model
     public function delivery()
     {
         return $this->belongsTo(Delivery::class);
+    }
+
+    public function orderProduct()
+    {
+        return $this->hasMany(OrderProduct::class);
     }
 
 }

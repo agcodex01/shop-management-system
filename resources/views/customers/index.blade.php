@@ -15,7 +15,7 @@
                     <thead>
                         <tr>
                             <th scope="col">Name</th>
-                            <th scope="col">Register Date</th>
+                            <th scope="col">Registered_date</th>
                             <th scope="col">Address</th>
                             <th scope="col">Actions</th>
                         </tr>

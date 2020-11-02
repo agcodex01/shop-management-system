@@ -18,7 +18,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="name" value="{{ old('name')}}">
                             @error('name')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
@@ -29,7 +29,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="company">Company</label>
-                            <input type="text" class="form-control @error('company') is-invalid @enderror" id="company" name="company">
+                            <input type="text" class="form-control @error('company') is-invalid @enderror" id="company" name="company" value="{{ old('company')}}">
                             @error('company')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
@@ -44,7 +44,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email')}}">
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
@@ -55,7 +55,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="number">Number</label>
-                            <input type="text" class="form-control @error('number') is-invalid @enderror" id="number" name="number">
+                            <input type="text" class="form-control @error('number') is-invalid @enderror" id="number" name="number" value="{{ old('number')}}">
                             @error('number')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
@@ -66,7 +66,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address">
+                            <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address')}}">
                             @error('address')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}

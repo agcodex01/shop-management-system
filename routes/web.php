@@ -30,6 +30,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('{user}', 'UserController@update')->name('suppliers.update');
     });
     Route::get('admin/accounts/profile','UserController@adminProfile')->name('accounts.admin');
+    Route::put('admin/accounts/{user}','UserController@update')->name('accounts.update');
+    Route::get('sales_per_week','UserController@salesPerWeek')->name('sales.perWeek');
+    Route::get('customers/{id}/orders','UserController@orders')->name('customers.orders');
     Route::resource('customers', 'UserController');
     Route::resource('products', 'ProductController');
     Route::resource('orders', 'OrderController');

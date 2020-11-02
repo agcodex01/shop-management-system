@@ -17,9 +17,9 @@ class Product extends Model
         'sizes' => 'array'
     ];
 
-    public function order()
+    public function orderProducts()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->hasMany('App\Order', 'product_id', 'id');
     }
 
 }

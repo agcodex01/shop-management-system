@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\OrderProduct;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class OrderController extends Controller
 {
@@ -17,8 +19,8 @@ class OrderController extends Controller
     {
         $orders = [
             'pending' => Order::where('status','pending')->with('user')->paginate(5),
-            'confirmed' => Order::where('status','confirmed')->with('user')->paginate(3),
-            'completed' => Order::where('status','completed')->with('user')->paginate(2),
+            'confirmed' => Order::where('status','confirmed')->with('user')->paginate(5),
+            'completed' => Order::where('status','completed')->with('user')->paginate(5),
         ];
         return view('orders.index',compact('orders'));
     }
@@ -57,7 +59,9 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('orders.show',compact('order'));
+        $orderDetails=  OrderProduct::where('order_id',$order->id)->get();
+
+        return view('orders.show',compact('order','orderDetails'));
     }
 
     /**
@@ -78,9 +82,12 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Order $order)
     {
-        //
+        $order->update([
+            'status' => $request->status
+        ]);
+        return back()->with('success','Order update sucessfully');
     }
 
     /**
@@ -92,5 +99,10 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function orderId()
+    {
+        $code = Str::upper(Str::random(3));
+        return 'ORD-'. $code.'-'.date('Y-md-His');
     }
 }

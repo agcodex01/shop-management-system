@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\OrderProduct;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(10);
         return view('products.index',compact('products'));
     }
 
@@ -80,6 +81,10 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        $products = OrderProduct::where('product_id',$product->id)->get();
+        foreach($products as $productToDelete){
+            $productToDelete->delete();
+        }
         return back();
     }
 }

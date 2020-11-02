@@ -146,10 +146,10 @@ class UserController extends Controller
         $yearAndMonth = date('Y/m/');
 
         return array(
-            date('W',strtotime($yearAndMonth .'1')),
-            date('W',strtotime($yearAndMonth .'08')),
-            date('W',strtotime($yearAndMonth .'15')),
-            date('W',strtotime($yearAndMonth .'22')),
+            date('W',strtotime($yearAndMonth .'07')),
+            date('W',strtotime($yearAndMonth .'14')),
+            date('W',strtotime($yearAndMonth .'21')),
+            date('W',strtotime($yearAndMonth .'28')),
         );
     }
 

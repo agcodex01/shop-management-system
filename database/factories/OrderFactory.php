@@ -20,7 +20,6 @@ $factory->define(Order::class, function (Faker $faker) {
         'customer_message' => $faker->sentence(10),
         'user_id' => factory(User::class)->state('customer')->create(),
         'ord_id' => 'ORD-'. $code.'-'.date('Y-md-His'),
-        'updated_at' => now()->addWeek()
     ];
 });
 

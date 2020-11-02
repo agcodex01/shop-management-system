@@ -9,11 +9,11 @@
                         class="fa fa-plus ml-2"></i></a>
             </div>
 
-            <div class="card-body">
-                <table class="table">
+            <div class="card-body table-responsive">
+                <table class="table ">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col"># Product ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Total Stocks</th>
@@ -23,7 +23,7 @@
                     <tbody>
                         @foreach ($products as $product)
                             <tr>
-                                <th scope="row">1</th>
+                                <th scope="row">{{ $product->prd_id}}</th>
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->price }}</td>
                                 <td>{{ $product->stocks}}</td>

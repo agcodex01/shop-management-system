@@ -85,15 +85,19 @@ class UserController extends Controller
 
     public function update(UserRequest $request, User $user)
     {
-        if(!Hash::check($request->currentPassword,$user->password)){
-           return back()->withErrors(['currentPassword'=>'You enter an incorrect password.']);
-        }
-        $password = [
-            'password' => Hash::make($request->validated()['password'])
-        ];
-        $newUserDeatails = collect(collect($request->validated())->except('password'))->merge($password)->all();
+        if($request->has('currentPassword')){
+            if(!Hash::check($request->currentPassword,$user->password)){
+                return back()->withErrors(['currentPassword'=>'You enter an incorrect password.']);
+             }
+             $password = [
+                 'password' => Hash::make($request->validated()['password'])
+             ];
+             $newUserDeatails = collect(collect($request->validated())->except('password'))->merge($password)->all();
 
-        $user->update($newUserDeatails);
+             $user->update($newUserDeatails);
+        }else{
+            $user->update($request->validated());
+        }
 
         return back();
     }

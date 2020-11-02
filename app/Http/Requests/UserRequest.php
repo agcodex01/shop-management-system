@@ -26,10 +26,10 @@ class UserRequest extends FormRequest
         return [
             'type' => 'sometimes|string',
             'name' => 'required|string',
-            'username' => 'required|string',
+            'username' => 'sometimes',
             'email' => 'required|email|unique:users,'. $this->user()->id ,
-            'password' => 'sometimes|string|min:8|confirmed',
-            'currentPassword' => 'sometimes|string',
+            'password' => 'sometimes|confirmed',
+            'currentPassword' => 'sometimes',
             'company' => 'sometimes|string',
             'contact_number' => 'required|string',
             'image_url' => 'sometimes|max:255',

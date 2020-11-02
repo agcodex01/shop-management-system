@@ -55,8 +55,8 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="number">Number</label>
-                            <input type="text" class="form-control @error('number') is-invalid @enderror" id="number" name="number" value="{{ old('number')}}">
-                            @error('number')
+                            <input type="text" class="form-control @error('contact_number') is-invalid @enderror" id="number" name="contact_number" value="{{ old('contact_number')}}">
+                            @error('contact_number')
                             <span class="invalid-feedback" role="alert">
                                 {{ $message }}
                             </span>

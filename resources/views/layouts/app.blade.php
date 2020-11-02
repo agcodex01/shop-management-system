@@ -134,7 +134,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                     @else
                         <div class="col-md-12">
                         @endauth

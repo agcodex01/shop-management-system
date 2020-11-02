@@ -4,9 +4,12 @@
 
 use App\Product;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Product::class, function (Faker $faker) {
+    $code = Str::upper(Str::random(3));
     return [
+        'prd_id' => 'PRD-'. $code.'-'.date('Y-md-His'),
         'name' => $faker->name,
         'type' => $faker->randomElement(config('product.types')),
         'brand' => $faker->randomElement(config('product.brands')),

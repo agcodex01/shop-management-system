@@ -1,5 +1,12 @@
+## Setup
+https://github.com/jenssegers/laravel-mongodb
 ## How to Install
-# run composer install
+- run composer install
+- php artisan migrate --seed
+- php artisan tinker
+#get the first user
+>>> User::first()
+
 Copy the content in .env.example and create .env file then paste to it.
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 

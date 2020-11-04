@@ -7,7 +7,12 @@
     min-height: 100vh;
     background-image: url("../images/bg-img.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 
 .avatar {
@@ -17,14 +22,6 @@
 
 input[type=checkbox]:hover {
     cursor: pointer;
-}
-
-.opacity-1 {
-
-    background-color: rgba(52, 144, 220, 0.4) !important;
-}
-.opacity-1:hover {
-    background-color: rgba(52, 144, 220, 1) !important;;
 }
 
 

@@ -1,3 +1,7 @@
+## Members
+- Afable Gerald
+- Leordan Carmona
+- Rhea May Ardiente
 ## Setup
 https://github.com/jenssegers/laravel-mongodb
 ## How to Install

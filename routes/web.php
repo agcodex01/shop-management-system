@@ -21,18 +21,18 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
 
-    Route::prefix('suppliers')->group(function () {
-        Route::get('', 'UserController@suppliers')->name('suppliers.index');
-        Route::get('{user}/show', 'UserController@show')->name('supplier.show');
-        Route::view('create', 'suppliers.create')->name('supplier.create');
-        Route::get('{user}/request_product', 'UserController@requestProduct')->name('suppliers.request');
-        Route::post('', 'UserController@store')->name('supplier.store');
-        Route::put('{user}', 'UserController@update')->name('suppliers.update');
-    });
+    Route::get('suppliers', 'UserController@suppliers')->name('suppliers.index');
+    Route::get('suppliers/{user}/show', 'UserController@show')->name('supplier.show');
+    Route::view('suppliers/create', 'suppliers.create')->name('supplier.create');
+    Route::get('suppliers/{user}/request_product', 'UserController@requestProduct')->name('suppliers.request');
+    Route::post('suppliers', 'UserController@store')->name('supplier.store');
+    Route::put('suppliers/{user}', 'UserController@update')->name('suppliers.update');
+
     Route::get('admin/accounts/profile','UserController@adminProfile')->name('accounts.admin');
     Route::put('admin/accounts/{user}','UserController@update')->name('accounts.update');
     Route::get('sales_per_week','UserController@salesPerWeek')->name('sales.perWeek');
     Route::get('customers/{id}/orders','UserController@orders')->name('customers.orders');
+
     Route::resource('customers', 'UserController');
     Route::resource('products', 'ProductController');
     Route::resource('orders', 'OrderController');

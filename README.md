@@ -1,3 +1,4 @@
+### Simple Shop Management using Laravel and MongoDB with bootstrap design
 ## Members
 - Afable Gerald
 - Leordan Carmona
